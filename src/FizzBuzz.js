@@ -1,22 +1,13 @@
-function Player() {
-}
-Player.prototype.play = function(song) {
-  this.currentlyPlayingSong = song;
-  this.isPlaying = true;
-};
-
-Player.prototype.pause = function() {
-  this.isPlaying = false;
-};
-
-Player.prototype.resume = function() {
-  if (this.isPlaying) {
-    throw new Error("song is already playing");
+var fizzBuzz = function(num){
+  if(!isNaN(num) && isFinite(num) && null!=num && typeof num === 'number'){
+    if(num%3===0 && num%5===0) return 'FizzBuzz';
+    if(num%3===0) return 'Fizz';
+    if(num%5===0) return 'Buzz';
+    return num;
   }
+  return 'Not-A-Number';
+}
 
-  this.isPlaying = true;
-};
-
-Player.prototype.makeFavorite = function() {
-  this.currentlyPlayingSong.persistFavoriteStatus(true);
-};
+for(var i = 1; i < 101 ; i++){
+  document.write(fizzBuzz(i)+' ');
+}
